@@ -1,0 +1,9 @@
+lst=[1,2,3,'a','b',[1,2,3]]
+print(lst[2])
+print(lst[-1])
+print(lst[:3])
+lst.insert(5,4)
+lst.append(10)
+lst.remove(3)
+lst.pop(4)
+print(lst)

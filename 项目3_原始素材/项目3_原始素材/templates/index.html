@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>单元3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/element.min.css">
+        <link rel="stylesheet" href="/static/css/index.css">
+    </head>
+    <body>
+        <div id="app">
+            <el-card>
+                <div slot="header">工业温度数据处理器</div>
+                <div class="space-y">
+                    工业温度正常值范围：23.2℃ ~ 35.6℃
+                </div>
+                <div class="flex space-y">
+                    <el-input-number 
+                        class="space-x"
+                        v-for="(item, index) of nums" 
+                        v-model="nums[index]" 
+                        :min="0"
+                        :controls="false">
+                    </el-input-number>
+                </div>
+                <div class="space-y">
+                    <el-radio-group v-model="value">
+                        <el-radio label="error" border>异常值数量 - error</el-radio>
+                    </el-radio-group>
+                </div>
+                <el-button type="primary" @click="handleClick">提交</el-button>
+            </el-card>
+            <el-card class="space-y">
+                <div slot="header">处理结果</div>
+                <div v-for="(item, index) of result" class="space-y">
+                    <span v-html="result[index]"></span>
+                </div>
+            </el-card>
+        </div>
+        <script src="/static/js/vue.min.js"></script>
+        <script src="/static/js/element.min.js"></script>
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/index.js"></script>
+    </body>
+</html>
